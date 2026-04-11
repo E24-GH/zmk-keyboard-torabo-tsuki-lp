@@ -1,6 +1,6 @@
 #include <scroll-snap.dtsi>
 
-/{
+/ {
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -15,10 +15,6 @@
         compatible = "zmk,input-listener";
         device = <&pointing_device_split>;
         status = "okay";
-        input-processors = 
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_scaler 1 1
-            &zip_scroll_snap
-            >;
+        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_scaler 1 1 &zip_scroll_snap>;
      };
 };
